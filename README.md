@@ -19,5 +19,5 @@ This repository contains examples on how you can use the websites from GTA V int
 - [Dynasty8](examples/dynasty8.lua)
 
 ## License
-The documentation and examples are  published under [No License](https://choosealicense.com/no-license/)
+The documentation and examples are published under [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
