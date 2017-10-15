@@ -1,4 +1,4 @@
-# Internet- Research
+# Internet-Research
 
 ## Table of Contents
 1. [Introduction](#introduction)
