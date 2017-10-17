@@ -41,7 +41,11 @@ function enableMouse()
  PopScaleformMovieFunctionVoid()
  
 end
---this should be in a loop
+----------------------------------------------------
+----------------------------------------------------
+
+--this should be in a loop 
+--this gives you some info about current site and stuff
 if IsControlJustPressed(1, 237) then
  if HasNamedScaleformMovieLoaded("web_browser") then
   SetPedConfigFlag(PlayerPedId(), 185, true)
