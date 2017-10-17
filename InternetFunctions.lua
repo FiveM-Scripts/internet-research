@@ -41,3 +41,43 @@ function enableMouse()
  PopScaleformMovieFunctionVoid()
  
 end
+--this should be in a loop
+if IsControlJustPressed(1, 237) then
+ if HasNamedScaleformMovieLoaded("web_browser") then
+  SetPedConfigFlag(PlayerPedId(), 185, true)
+PushScaleformMovieFunction(scaleform, "SET_DATA_SLOT")
+PushScaleformMovieFunctionParameterInt(0)
+PushScaleformMovieFunctionParameterInt(2)
+PopScaleformMovieFunctionVoid()
+  PushScaleformMovieFunctionParameterFloat(16.0)
+  PushScaleformMovieFunction(scaleform, "SET_INPUT_EVENT")
+  PushScaleformMovieFunctionParameterFloat(16.0)
+  PopScaleformMovieFunctionVoid()  
+ else
+
+  PopScaleformMovieFunctionVoid()
+ end
+
+   PushScaleformMovieFunction(scaleform, "GET_PAGE_ID")
+   PageID = PopScaleformMovieFunction()
+   selectionBool = Citizen.InvokeNative(0x768FF8961BA904D6, getCurrentSelection)
+   ScreenIDBool = Citizen.InvokeNative(0x768FF8961BA904D6, siteID)
+   PageIDBool = Citizen.InvokeNative(0x768FF8961BA904D6, PageID)
+   vVar = Citizen.InvokeNative(0x2DE7EFA66B906036, getCurrentSelection)
+   VVar = Citizen.InvokeNative(0x3E42690032C25806, getCurrentSelection)
+   nVar = Citizen.InvokeNative(0x2DE7EFA66B906036, siteID)
+   wvar = Citizen.InvokeNative(0x3E42690032C25806, siteID)
+   Nvar = Citizen.InvokeNative(0x2DE7EFA66B906036, PageID)
+   Wvar = Citizen.InvokeNative(0x3E42690032C25806, PageID)   
+   wVar = Round(0.0 + 1000.0 * Timestep())
+   Citizen.InvokeNative(0x3F369CD14982FA9D, GetHashKey(wvar), wVar + wvar)
+   Citizen.Trace("selectionBool: "..tostring(selectionBool).." ScreenIDBool: "..tostring(ScreenIDBool).." PageIDBool: "..tostring(PageIDBool)) 
+   Citizen.Trace(" get current selection: "..tostring(vVar).." get current websiteID: "..tostring(nVar).." get current page ID "..tostring(Wvar))   
+   PushScaleformMovieFunction(scaleform, "GET_CURRENT_ROLLOVER")
+   getCurrentSelection = PopScaleformMovieFunction()
+   PushScaleformMovieFunction(scaleform, "GET_SITE_ID")
+   siteID = PopScaleformMovieFunction()     
+else
+ vVar = nil
+ nvar = nil
+end
